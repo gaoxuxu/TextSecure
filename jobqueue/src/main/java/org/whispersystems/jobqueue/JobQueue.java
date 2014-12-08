@@ -16,17 +16,17 @@
  */
 package org.whispersystems.jobqueue;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Map;
 import java.util.Set;
 
 public class JobQueue {
 
+  /* 正在处理的组的ID的集合 */
   private final Set<String>     activeGroupIds = new HashSet<>();
+  /* Job队列 */
   private final LinkedList<Job> jobQueue       = new LinkedList<>();
 
   public synchronized void onRequirementStatusChanged() {
